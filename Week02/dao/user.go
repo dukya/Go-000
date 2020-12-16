@@ -3,6 +3,7 @@ package dao
 import (
 	"database/sql"
 	"errors"
+	"fmt"
 
 	_ "github.com/go-sql-driver/mysql"
 	xerrors "github.com/pkg/errors"
@@ -11,7 +12,7 @@ import (
 )
 
 const (
-	MYSQLSRC = "root:123456@tcp(127.0.0.1:3306)/testdb?charset=utf8"
+	MYSQLSRC = "root:123456@tcp(192.168.141.181:3306)/testdb?charset=utf8"
 )
 
 var (
@@ -22,6 +23,7 @@ var (
 func init() {
 	var err error
 	db, err = sql.Open("mysql", MYSQLSRC)
+	fmt.Println(1)
 	if err != nil {
 		panic(err)
 	}

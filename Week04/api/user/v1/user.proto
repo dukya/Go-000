@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = ".;v1";
+
+service User {
+  rpc GetUserById(GetUserByIdRequest) returns (GetUserByIdReply);
+}
+
+message GetUserByIdRequest {
+  int64 id = 1;
+}
+
+message GetUserByIdReply {
+  int64 id = 1;
+  string name = 2;
+  string mobile = 3;
+}
